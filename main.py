@@ -1,3 +1,4 @@
+#Definitions of Data object varaibles
 class Data:
     def __init__(self, key, value=None):
         self.key = key
@@ -8,6 +9,7 @@ class Data:
     def __repr__(self):
         return str(self)
 
+#Definitions of TreeNode object variables and methods
 class TreeNode:
     def __init__(self, data, parent=None, left=None, right=None):
         self.data = data
@@ -32,7 +34,9 @@ class TreeNode:
             self.right.num_descendants()
 
         return count
-    
+
+
+#Beginning of functions that can be used globaly   
 def insert_helper(root, key, value):
     if key < root.data.key:
         if root.left is None:
@@ -115,7 +119,10 @@ def get_height(root):
     if root is None:
         return 0
     return 1 + max(get_height(root.left), get_height(root.right))
-
+#End of globabl functions definitions
+    
+    
+#Definitions of a BinarySearhTree object variables and methods
 class BinarySearchTree:
     def __init__(self):
         self.root = None
